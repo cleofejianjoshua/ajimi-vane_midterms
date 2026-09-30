@@ -7,7 +7,13 @@ const ProjectSchema = new mongoose.Schema({
         unique: true},
     description: { 
         type: String, 
-        required: false }
+        required: false },
+    tasks: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Task',
+        },
+    ],
 }, {
     createdBy: {
         type: Schema.Types.ObjectId,

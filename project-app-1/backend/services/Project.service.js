@@ -5,4 +5,9 @@ const createProject = async () => {
     return await project.save();
 };
 
+const getAllProjectsWithTasks = async (data) => {
+    const project = await Project.findById(data).populate('tasks').lean();
+    return { project };
+};
+
 export default { createProject };
